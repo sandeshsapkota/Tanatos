@@ -1,0 +1,957 @@
+/**************** slider ****************/
+
+.slider{
+	background: url(../img/slider/bg-slider.jpg) 0 0 no-repeat;
+	height: 100vh;
+	padding-top: 200px;
+	background-size: cover;
+	position: relative;
+
+	@include respond(tab-land) {
+		height: auto;
+		padding: 100px 0;
+	}
+
+	&__item--wrap{
+		visibility: hidden;
+	}
+
+	&__detail{
+		text-align: center;
+	}
+
+	&__paragraph{
+		color: $color-white;
+		font-size: 25px;
+		margin-top: 16px;
+		line-height: 1.6;
+
+		@include respond(tab-land) {
+			font-size: 22px;
+		}
+
+		@include respond(tab-port){
+			padding: 0 20px;
+			font-size: 18px;
+
+			br{
+				display: none;
+			}
+		}
+
+		@include respond(phone) {
+    		font-size: 16px;
+    	}
+	}
+
+	&__btn--wrap{
+		margin-top: 59px;
+
+		@include respond(tab-land) {
+			margin-top: 40px;
+		}
+
+		@include respond(small-phone) {
+			margin-top: 25px;
+			display: flex;
+		 	flex-direction: column;
+		 	align-items: center;
+		}
+	}
+
+	&__btn--wrap .btn{
+		margin: 0 12px;
+		width: 210px;
+
+
+		@include respond(tab-land) {
+			width: 200px;
+		}
+
+		@include respond(small-phone) {
+			width: 150px;
+			&:not(:first-child) {
+				margin-top: 15px;
+			}
+		}
+	}
+
+	&__arrow{
+		position: absolute;
+		bottom: 52px;
+		left: calc(50% - 17px);
+		cursor: pointer;
+		// animation: moveDown 2s infinite;
+
+		@include respond(tab-land) {
+			bottom: 35px;
+		}
+	}
+
+}
+
+.hire{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 70vw;
+	height: 600px;
+	background: $color-white;
+	z-index: 1;
+	padding: 40px 100px 0;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(.3s);
+	@include transform(translate(-50%,-50%));
+
+	@include respond(tab-port){
+		width: 100vw;
+		height: 100vh;
+	}
+
+	@include respond(phone) {
+	 	width: 100vw;
+	 	padding: 20px;
+	 	height: 100vh;
+	 	top: 0;
+		left: 0;
+		@include transform(translate(0,0));
+	}
+
+	&__exit{
+		height: 38px;
+		width: 38px;
+		background: $color-primary;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		@include border-radius(50%);
+		@include transform(translate(50%,-50%));
+
+		@include respond(tab-port) {
+			@include transform(translate(0,0));
+		}
+	}
+
+	.input{
+		border: 1px solid #c4c6c9;
+		width: 100%;
+		margin-bottom: 29px;
+
+		@include respond(small-phone) {
+ 			margin-bottom: 15px;
+ 		}
+	}
+
+	.btn{
+		width: 100%;
+		border: none;
+	}
+
+	textarea{
+		height: 150px;
+
+		@include respond(small-phone) {
+ 			height: 120px;
+ 		}
+	}
+
+	.sec__heading p{
+		margin: 0 0 30px;
+		padding: 0;
+
+		@include respond(phone) {
+ 			margin-top: 15px;
+ 		}
+	}
+}
+
+.show__form .hire{
+	top: 50%;
+	visibility: visible;
+	opacity: 1;
+
+	@include respond(tab-port){
+		width: 100vw;
+		height: 100vh;
+	}
+
+	@include respond(phone) {
+	 	width: 100vw;
+	 	padding: 20px;
+	 	height: 100vh;
+	 	top: 0;
+		left: 0;
+		@include transform(translate(0,0));
+	}
+}
+
+/**************** service ****************/
+
+.service{
+	padding: 100px 0 105px;
+
+	@include respond(tab-land) {
+		padding: 75px 0;
+	}
+
+	@include respond(tab-land) {
+		padding: 50px 0;
+	}
+
+	@include respond(small-phone) {
+		padding: 60px 0;
+	}
+
+	.row{
+		flex-wrap: wrap;
+	}
+
+	&__col{
+		text-align: center;
+		padding: 0 50px;
+
+		@include respond(tab-land) {
+			padding: 0 20px;
+		}
+
+		@include respond(tab-port) {
+			width: 50% !important;
+
+			&:nth-child(3),
+			&:nth-child(4){
+				padding-top: 40px;
+			}
+		}
+
+		@include respond(phone) {
+			width: 100% !important;
+
+			&:not(:first-child) {
+				padding-top: 30px;
+			}
+		}
+	}
+
+	&__icon--wrap{
+		width: 151px;
+		height: 151px;
+		border: 1px solid #c5c7ca;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		@include border-radius(50%);
+
+		@include respond(tab-land) {
+			width: 120px;
+			height: 120px;
+		}
+
+		@include respond(small-phone) {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	&__topic{
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-top: 25px;
+	}
+
+	&__paragraph{
+		margin-top: 17px;
+
+		@include respond(phone) {
+			padding: 0 20px;
+		}
+
+		@include respond(small-phone) {
+			padding: 0;
+		}
+	}
+}
+
+/**************** newsletter ****************/
+
+.newsletter{
+	background: url(../img/newsletter/bg-newsletter.jpg) 0 0 no-repeat;
+	background-size: cover;
+	@extend %sec-padding;
+
+	@include respond(small-phone) {
+	
+	}
+
+	&__form{
+		display: flex;
+		justify-content: center;
+ 		
+ 		@include respond(small-phone) {
+ 			flex-direction: column;
+ 		}
+	}
+
+	.input{
+		width: 562px;
+		margin: 0 13px;
+
+		@include respond(tab-land) {
+			 width: 500px;
+		}
+
+		@include respond(tab-port) {
+			margin: 0;
+			width: 340px;
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+
+		@include respond(small-phone) {
+			width: 100%;
+			margin-bottom: 15px;
+			@include border-radius(5px);
+		}
+	}
+
+	.btn{
+		margin: 0 13px;
+		padding-left: 90px;
+		padding-right: 90px;
+
+		@include respond(tab-land) {
+			 padding-right: 70px;
+			 padding-left: 70px;
+		}
+
+		@include respond(tab-port) {
+			margin: 0;
+			padding-right: 40px;
+			padding-left: 40px;
+		    border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+		}
+
+		@include respond(small-phone) {
+			@include border-radius(5px);
+		}
+	}
+}
+
+/**************** work ****************/
+
+.work{
+	@extend %sec-padding;
+	text-align: center;
+
+
+
+	@include respond(tab-port) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	@include respond(small-phone) {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	&__list--wrapper{
+		padding: 94px 0 70px;
+
+		@include respond(tab-land) {
+			padding: 45px 0;
+		}
+
+
+		@include respond(small-phone) {
+			padding: 30px 0;
+		}
+	}
+
+	&__list{
+		list-style: none;
+	}
+
+	&__item{
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 30px;
+		@include border-radius(5px);
+
+		&:hover .work__detail{
+			top: 0;
+		}
+
+		@include respond(tab-port) {
+			width: calc((100% - 30px) / 2) !important;
+
+			img{
+				width: 100%;
+			}
+ 		}
+
+ 		@include respond(phone) {
+ 			width: 100% !important;
+ 		}
+
+ 		@include respond(small-phone) {
+ 			margin-bottom: 20px;
+ 		}
+
+		
+	}
+
+	&__detail{
+		position: absolute;
+		top: 100%;
+		left: 0;
+ 		background-color: rgba(247, 96, 14, .9);
+ 		width: 100%;
+ 		height: 100%;
+ 		color: $color-white;
+ 		padding: 0 30px;
+
+ 		@extend %column-center;
+
+ 		@include transition(.4s);
+
+ 		@include respond(tab-land) {
+ 			padding: 0 15px;
+ 		}
+
+ 		@include respond(phone) {
+ 			padding: 0 50px;
+ 		}
+
+ 		@include respond(small-phone) {
+ 			padding: 0 25px;
+ 		}
+	}
+
+	&__heading{
+		font-size: 25px;
+		line-height: 1.6;
+		text-transform: uppercase;
+	}
+
+	&__paragraph{
+		margin-top: 13px;
+	}
+
+	&__detail .btn{
+		color: $color-white;
+		border: 1px solid $color-white;
+		margin-top: 44px;
+		padding-left: 45px;
+		padding-right: 45px;
+		align-self: center;
+
+		&:hover{
+			color: $color-secondary;
+			background-color: $color-white;
+		}
+
+
+		@include respond(tab-land) {
+			margin-top: 25px;
+			padding-left: 35px;
+			padding-right: 35px;
+ 		}
+ 		@include respond(tab-port) {
+ 			margin-top: 10px;
+			padding: 10px 15px;
+ 		}
+
+ 		@include respond(phone) {
+ 			margin-top: 20px;
+			padding: 14px 25px;
+ 		}
+	}
+}
+
+/**************** client ****************/
+
+.client{
+	background: url(../img/client/bg-client.jpg) 0 0 no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	@extend %sec-padding;
+
+	&__list{
+		visibility: hidden;
+	}
+
+	&__img--wrap{
+		display: inline-block;
+		height: 120px;
+		width: 120px;
+		overflow: hidden;
+		@include border-radius(50%);
+
+		@include respond(phone) {
+			width: 100px;
+			height: 100px; 
+ 		}
+	}
+
+	&__reviews{
+		margin-top: 35px;
+		color: $color-white;
+		font-size: 25px;
+		font-style: italic;
+		line-height: 1.6;
+
+		padding: 0 205px;
+
+		@include respond(tab-land) {
+			font-size: 22px;
+			padding: 0 150px;	
+		}	
+
+		@include respond(tab-port) {
+			padding: 0 100px; 
+ 		} 
+
+ 		@include respond(phone) {
+			padding: 0 75px; 
+ 		} 
+
+ 		@include respond(small-phone) {
+			font-size: 16px;
+			padding: 0 60px;
+			margin-top: 25px;
+		}
+	}
+
+	&__name{
+		font-size: 18px;
+		color: $color-white;
+		font-weight: 600;
+		margin-top: 35px;
+
+		@include respond(tab-land) {
+			font-size: 16px;		 
+		}
+
+		@include respond(tab-port) {
+			margin-top: 15px;		 
+		}
+	}
+
+	.slick-arrow{
+		position: absolute;
+		top: 50%;
+		z-index: 3;
+		@include translate(0,-50%);
+
+		@include respond(tab-land) {
+			height: 30px;
+		}
+
+		@include respond(small-phone) {
+			height: 25px;
+		}
+
+		&.arrow-prev{
+			left: 100px;
+
+			@include respond(tab-land) {
+				left: 50px;
+			}
+
+			@include respond(tab-port) {
+				left: 30px;
+			}
+
+			@include respond(small-phone) {
+				left: 20px;
+			}
+		}
+
+		&.arrow-next{
+			right: 100px;
+
+			@include respond(tab-land) {
+				right: 50px;
+			}
+
+			@include respond(tab-port) {
+				right: 30px;
+			}
+
+			@include respond(small-phone) {
+				right: 20px;
+			}
+		}
+	}
+}
+
+/**************** team ****************/
+
+.team{
+	@extend %sec-padding;
+
+	@include respond(small-phone) {
+		.container{padding: 0;}
+		.sec__heading .sec__paragraph{ padding: 0 20px }
+	}
+
+	&__slider{
+		padding-top: 65px;
+		visibility: hidden;
+
+		@include respond(tab-land) {
+			padding-top: 75px;
+		}
+
+		@include respond(tab-port) {
+			padding-top: 50px;
+		}
+	}
+
+	.row{
+		flex-direction: column;
+	}
+
+	&__item{
+		list-style: none;
+	}
+
+	&__member{
+		text-align: center;
+		@include filter(grayscale(100%));
+		// @include transition(.3s);
+
+		&:hover{
+			@include filter(grayscale(0));
+		}
+
+		@include respond(tab-port){
+			padding: 0 7px;
+		}
+
+	}
+
+	&__member--img img{
+		display: inline-block;
+	}
+
+	&__member--name{
+		margin-top: 20px;
+		font-size: 25px;
+		text-transform: uppercase;
+		font-weight: 600;
+
+		@include respond(tab-port){
+			font-size: 22px;
+		}
+	}
+
+	.social{
+		margin-top: 10px;
+
+		@include respond(tab-port){
+			 li{
+			 	margin: 0 5px;
+			 }
+		}
+	}
+
+	.social img{
+		width: 24px;
+	}
+
+	.paragraph{
+		margin-top: 10px;
+
+		@include respond(tab-port){
+			// display: none;
+		}
+	}
+
+	.slick-dots{
+		padding-top: 50px;
+
+		@include respond(small-phone){
+			padding-top: 25px;
+		}
+	}
+
+	
+}
+
+/**************** contact ****************/
+
+.contact{
+	background: url(../img/contact/bg-contact.jpg) 0 0 no-repeat;
+	background-size: cover;
+ 	@extend %sec-padding;
+
+ 	.row{
+ 		padding-top: 95px;
+
+ 		@include respond(tab-port){
+ 			flex-direction: column;
+ 			padding-top: 50px;
+ 		}
+ 	}
+
+ 	&__desc{
+ 		@include respond(tab-port) {
+ 			width: 100% !important;
+			padding: 30px 100px 0;
+ 		}
+
+ 		@include respond(phone){
+ 			padding: 30px 20px 0;
+ 		}
+
+ 		@include respond(small-phone){
+ 			padding: 10px 5px 0;
+ 		}
+ 	}
+
+ 	&__info{
+ 		display: flex;
+
+ 		&:first-child{
+ 			margin-bottom: 63px; 
+
+ 			@include respond(tab-port) {
+	 		 	margin: 20px 0 30px;
+ 			}
+
+ 			@include respond(small-phone) {
+	 		 	margin-bottom: 20px;
+ 			}
+ 		}
+
+ 		@include respond(small-phone) {
+	 	  flex-direction: column;
+ 		}
+ 	}
+
+ 	&__info--icon{
+ 		margin-right: 50px;
+
+		@include respond(phone) {
+	 		margin-right: 30px;
+	 		width: 50px;
+ 		}
+
+ 		@include respond(small-phone) {
+	 	   margin-bottom: 15px;
+	 	   width: 40px;
+ 		}
+ 	}
+
+ 	&__address{
+ 		color: $color-white;
+ 	}
+
+ 	&__address--heading{
+ 		text-transform: uppercase;
+ 		color: $color-white;
+ 	}
+
+ 	.paragraph{
+ 		margin-top: 18px;
+
+ 		@include respond(tab-port) {
+	 		margin-top: 10px;
+ 		}
+
+ 		@include respond(small-phone) {
+ 			margin-top: 0;
+	 		br{display: none;}
+ 		}
+ 	}
+
+ 	.contact__id{
+ 		display: flex;
+ 		flex-direction: column;
+ 		margin-top: 16px;
+
+ 		@include respond(tab-port) {
+	 		margin-top: 10px;
+ 		}
+
+ 		@include respond(small-phone) {
+	 		margin-top: 5px;
+ 		}
+ 	}
+
+ 	.social{
+ 		margin-top: 90px;
+ 		text-align: left;
+
+ 		@include respond(tab-port) {
+	 		margin-top: 40px;
+ 		}
+
+ 		@include respond(small-phone) {
+	 		margin-top: 20px;
+ 		}
+
+ 		li:first-child{
+ 			margin-left: 0;
+ 		}
+
+ 		li img{
+ 			@include respond(small-phone) {
+	 			width:  35px;
+ 			}
+ 		}
+ 	}
+
+ 	&__link{
+ 		color: $color-white;
+ 		text-decoration: none;
+ 		align-self: flex-start;
+ 		padding-right: 5px;
+
+ 		@include transition(.5s);
+
+ 		&:hover{
+ 			margin-left: -10px;
+ 		}
+
+ 		i{
+ 			margin-right: 15px;
+ 		}
+
+ 		&:last-child{
+ 			margin-top: 3px;
+ 		}
+ 	}
+
+ 	&__form{
+
+ 		@include respond(tab-port){
+ 			order: -1;
+ 			width: 100% !important;
+ 			padding: 0 100px;
+ 		}
+
+ 		@include respond(phone) {
+ 			padding: 0 20px 0;
+ 		}
+
+ 		@include respond(small-phone) {
+ 			padding: 0 5px 0;
+ 		}
+
+ 		.input{
+ 			width: 100%;
+ 			margin-bottom: 18px;
+ 		}
+
+ 		textarea{
+ 			resize: none;
+ 			height: 230px;
+
+			@include respond(small-phone) {
+ 				height: 130px;
+			}
+
+ 		}
+
+ 		input[type="submit"]{
+ 			width: 100%;
+ 			text-align: right;
+
+ 			&:focus{
+ 				outline: none;
+ 			}
+ 		}
+ 	}
+}
+
+/**************** copyright ****************/
+
+.copyright{
+	background: $color-primary;
+	padding: 41px 0 42px;
+
+	@include respond(tab-port) {
+		padding: 20px;
+	}
+
+	.container{
+		@extend %space-between;
+
+		@include respond(phone) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	p{
+		color: $color-white;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	&__designer--link{
+		display: inline-block;
+		@include transition(.4s);
+
+		&:hover{
+			@include transform(rotate(6deg) scale(1.05));
+		}
+	}
+}
+
+/**************** slick-slider customization ****************/
+
+.slick-initialized{
+	visibility: visible;
+}
+
+.slick-arrow{
+	cursor: pointer;
+}
+
+.slick-slide:focus{
+	outline: none;
+}
+
+.slick-dots{
+	text-align: center;
+	list-style: none;
+
+	li{
+		display: inline-block;
+	}
+
+	.slick-active button{
+		height: 15px;
+		width: 15px;
+		background: $color-secondary;
+	}
+
+	button{
+		font-size: 0;
+		@include border-radius(50%);
+		background: #c4c6c9;
+		width: 12px;
+		height: 12px;
+		margin: 0 9px;
+		border: none;
+		cursor: pointer;
+
+		&:focus{
+			outline: none;
+		}
+	}
+
+}
+
+
+

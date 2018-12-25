@@ -1,0 +1,21 @@
+.social{
+	list-style: none;
+	text-align: center;
+
+	&__item{
+		display: inline-block;
+		margin: 0 10px;
+
+		// @include transition(.5s);
+
+		@include respond(small-phone) {
+			margin: 0 5px;
+		}
+
+		&:hover{
+			 .social__link img{
+			 	 @include filter(brightness(130%));
+			 }
+		}
+	}
+}

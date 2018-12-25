@@ -1,0 +1,20 @@
+@keyframes moveDown{
+	0%{
+		@include translate(0,0);
+	}
+	20%{
+		@include translate(0,2px);
+	}
+	40%{
+		@include translate(0,4px);
+	}
+	60%{
+		@include translate(0,6px);
+	}
+	80%{
+		@include translate(0,4px);
+	}
+	100%{
+		@include translate(0,2px);
+	}
+}

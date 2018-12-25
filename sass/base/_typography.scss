@@ -1,0 +1,63 @@
+.heading__primary{
+	font-size: 35px;
+	line-height: 1.14;
+	color: $color-primary;
+	text-transform: uppercase;
+    font-family: 'open_sanssemibold';
+
+	span{
+		color: $color-secondary;
+	}
+
+	&--main{
+		color: $color-white;
+    	font-family: 'open_sansextrabold';
+    	font-size: 70px;
+
+    	@include respond(tab-land) {
+    		font-size: 50px;
+    	}
+
+    	@include respond(tab-port) {
+    		font-size: 40px;
+    	}
+
+    	@include respond(small-phone) {
+    		font-size: 35px;
+    		padding: 0 15px;
+    	}
+	}
+}
+
+.paragraph{
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+.sec__heading{
+	text-align: center;
+	background: red;
+
+	.heading__primary{
+		margin-top: -7px;
+	}
+
+	.sec__paragraph{
+		font-size: 16px;
+		line-height: 1.9;
+		margin-top: 14px;
+		padding: 0 342px;
+
+		@include respond(tab-land) {
+			padding: 0 200px;
+		}
+
+		@include respond(tab-port) {
+			padding: 0 75px;
+		}
+
+		@include respond(small-phone) {
+			padding: 0;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+/************ classes ************/
+
+.container{
+	max-width: 1140px;
+	margin: 0 auto;
+
+	@include respond(tab-land) {
+		padding: 0 30px;
+	}
+
+	@include respond(tab-port) {
+		padding: 0 15px;
+	}
+	 
+}
+
+.color-white{
+	color: $color-white;
+}
+
+/************ extenda ************/
+
+%space-between{
+	display: flex !important;
+	justify-content: space-between;
+}
+
+%column-center{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+%sec-padding{
+	padding: 100px 0;
+
+	@include respond(tab-land) {
+		padding: 75px 0;
+	}
+
+	@include respond(tab-port) {
+		padding: 50px 0;
+	}
+}

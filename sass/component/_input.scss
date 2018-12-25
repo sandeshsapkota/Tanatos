@@ -1,0 +1,32 @@
+.input{
+	border: none;
+	padding: 16px 24px;
+	font-size: 16px;
+	border-radius: 5px;
+	color: $color-primary;
+
+	@include transition(.4s);
+
+	&::placeholder{
+		color: $color-primary;
+	}
+
+	&:focus{
+		outline: none;
+		// box-shadow: inset 0 0 20px 1px rgba(40, 40, 40, .5);
+	}
+
+	&__submit{
+		cursor: pointer;
+
+		&:focus,
+		&:active{
+			outline: none;
+		}
+	}
+
+	@include respond(small-phone) {
+		padding: 12px 15px;
+	}
+}
+
